@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    const container = document.createElement('div')
+    // console.log(container);
+    container.className="main"
+    container.id = Math.round( Math.random()*10 + 1);
+    container.setAttribute("title", "generate Title");
+    container.style.width = "100px";
+    container.style.height = "100px";
+    container.style.backgroundColor="green"
+    // container.innerText="Chai Code";
+   const addtext =  document.createTextNode("chai Code")
+   container.appendChild(addtext);
+   document.body.appendChild(container)
+    console.log(container);
+
+const box = (text,color)=>{
+    const newBox = document.createElement('div');
+    newBox.className = "box";
+    newBox.style.width = "100px";
+    newBox.style.height = "100px";
+    newBox.style.backgroundColor = color;
+    newBox.style.margin="5px"
+    newBox.innerText= text;
+    document.body.appendChild(newBox)
+}
+
+box("blue","blue");
+box("red", "red");
+box("yellow", "yellow")
+    
+    
+</script>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      * {
+        background-color: #212121;
+        color: #fff;
+      }
+      ul {
+        display: flex;
+        gap: 25px;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Images</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            height="200px"
+            src="https://images.pexels.com/photos/6135922/pexels-photo-6135922.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="photo shop"
+            id="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            height="200px"
+            src="https://images.pexels.com/photos/1829980/pexels-photo-1829980.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="japan"
+            id="japan"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            height="200px"
+            src="https://images.pexels.com/photos/1179225/pexels-photo-1179225.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="river"
+            id="river"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            height="200px"
+            src="https://images.pexels.com/photos/8880328/pexels-photo-8880328.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="jaquar"
+            id="jaquar"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            height="200px"
+            src="https://images.pexels.com/photos/879109/pexels-photo-879109.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="code"
+            id="code"
+          />
+        </li>
+        <li>
+          <a href="https://google.com" id="google">google</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById('code').onclick = ()=>{
+    //     alert('code clicked')
+    // }
+
+
+    // type, timestamp, defaultPrevented, target, toElements, srcElements, currentTarget
+    //clientX, ClientY, screenX, screenY,
+    //ctrlKey, altKey, shiftKey, keyCode
+
+
+    // event Propagation 
+    // it have two context 
+    // 1. Capturing phase -> true top to buttom
+    // 2. Bubbling phase -> false (default value) bottom to top
+
+
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //   console.log("Clicked inside the ul");
+    // }, true);
+
+
+    // document.getElementById("code").addEventListener("click", (e) => {
+    //   console.log("Clicked on the code");
+    // }, true);
+
+    // document.getElementById('google').addEventListener("click", (e)=>{
+    //     console.log('google clciked');
+        
+    //     e.preventDefault()
+    //     // e.stopPropagation()
+    // },true)
+
+    document.querySelector('#images').addEventListener('click', (e)=>{
+        console.log(e.target.parentNode);
+        // let remove = e.target.parentNode;
+        // remove.remove();
+
+        // console.log(e.target.tagName);
+        
+        if (e.target.tagName === 'IMG') {
+            let remove = e.target.parentNode;
+            remove.remove();
+        }
+
+    })
+  </script>
+</html>
